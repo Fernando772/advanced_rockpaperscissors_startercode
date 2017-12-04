@@ -19,11 +19,11 @@
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
 
 //GLOBAL VARIABLES
-
-
-
+var usersChoice ="";
+var comChoice="";
+var rps=["rock","paper","sissors"];
 //FUNCTIONS
-
+console.log(rps);
 
 
 // DOCUMENT READY FUNCTION
