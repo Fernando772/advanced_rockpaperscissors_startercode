@@ -20,11 +20,19 @@
 
 //GLOBAL VARIABLES
 var usersChoice ="";
-var comChoice="";
-var rps=["rock","paper","sissors"];
+var computerChoice=["rock","paper","sissors"];
+var winner="";
+var choiceIndex=Math.floor(Math.random()*3);
 //FUNCTIONS
-console.log(rps);
-
+console.log();
+console.log(computerChoice[choiceIndex]);
+$(document).ready(function(){
+       $("usersChoice").click(function(){    
+        
+      var value =$("input").val();
+     alert(value);
+    });
+});
 
 // DOCUMENT READY FUNCTION
 
