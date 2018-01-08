@@ -20,19 +20,71 @@
 
 //GLOBAL VARIABLES
 var usersChoice ="";
-var computerChoice=["rock","paper","sissors"];
 var winner="";
-var choiceIndex=Math.floor(Math.random()*3);
-//FUNCTIONS
-console.log();
-console.log(computerChoice[choiceIndex]);
-$(document).ready(function(){
-       $("usersChoice").click(function(){    
-        
-      var value =$("input").val();
-     alert(value);
-    });
-});
 
+//FUNCTIONS
+//console.log();
+//console.log(computerChoice[choiceIndex]);
+function selectWinner(userChoice, computerChoice) {
+    
+    if (userChoice === "scissors") {
+ 
+        if (computerChoice === "rock") {
+            return "computer wins";
+        } else if (computerChoice === "paper") {
+            return "user wins";
+        } else {
+            return "it's a tie";
+        }
+        
+    }
+     if (userChoice === "rock") {
+ 
+        if (computerChoice === "paper") {
+            return "computer wins";
+        } else if (computerChoice === "scissors") {
+            return "user wins";
+        } else {
+            return "it's a tie";
+        }
+        
+    } if (userChoice === "paper") {
+ 
+        if (computerChoice === "scissors") {
+            return "computer wins";
+        } else if (computerChoice === "rock") {
+            return "user wins";
+        } else {
+            return "it's a tie";
+        }
+        
+    }
+    
+    // TODO - we need to handle the cases where the user chooses rock or paper
+}
+
+var winner = selectWinner("scissors", "rock" , "paper");
+
+
+
+// DOCUMENT READY FUNCTION
+$(document).ready(function() {
+
+    //Click Function when shoot is clicked
+    $("#shoot").click(function(){
+        
+        var choices=["rock","paper","scissors"];
+      var choiceIndex=Math.floor(Math.random()*choices.length);
+      //Takes in User Choice from the input box and stores it in a variable
+      userChoice = $("#userInput").val();
+      var computerChoice=choices[choiceIndex];
+      //Display the user choice to the screen
+      $("#usersChoice").append(userChoice);
+      $("#computerChoice").append(computerChoice);
+        var winner = selectWinner(userChoice , computerChoice);
+        alert(winner);
+    });
+       
+});
 // DOCUMENT READY FUNCTION
 
