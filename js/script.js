@@ -79,8 +79,8 @@ $(document).ready(function() {
       userChoice = $("#userInput").val();
       var computerChoice=choices[choiceIndex];
       //Display the user choice to the screen
-      $("#usersChoice").append(userChoice);
-      $("#computerChoice").append(computerChoice);
+      $("#usersChoice").html(userChoice);
+      $("#computerChoice").html(computerChoice);
         var winner = selectWinner(userChoice , computerChoice);
         alert(winner);
     });
